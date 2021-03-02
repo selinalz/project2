@@ -1,0 +1,242 @@
+body {
+	cursor: none;
+	overflow-x: hidden;
+}
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+.circle {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	background-color: #8D73EA;
+	border-radius: 50%;
+	transition: .10s;
+	z-index: 5;
+}
+.next_old {
+	position: absolute;
+	top: 50%;
+	right: -3%;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+	transform: rotate(-5deg) scaleX(-1);
+	cursor: none;
+	animation-name: fade;
+	animation-duration: 3s;
+	opacity: 0%;
+}
+.next_old:before {
+	content: "";
+	position: absolute;
+	top: -110px;
+	left: 100px;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+	cursor: none;
+}
+.back_old {
+	position: absolute;
+	top: 50%;
+	left: -3%;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+	transform: rotate(5deg);
+	cursor: none;
+	animation-name: fade;
+	animation-duration: 3s;
+	opacity: 0%;
+}
+.back_old:before {
+	content: "";
+	position: absolute;
+	top: -100px;
+	left: 100px;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+}
+.arrow_old {
+	position: absolute;
+	top: 56.9%;
+	left: 25%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 100px;
+	font-weight: 700;
+	animation-name: fade;
+	animation-duration: 3s;
+	opacity: 0%;
+}
+.arrow2_old {
+	position: absolute;
+	top: 56.9%;
+	right: 25%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 100px;
+	font-weight: 700;
+	animation-name: fade;
+	animation-duration: 3s;
+	opacity: 0%;
+}
+@keyframes fade {
+	0% {
+		opacity: 100%;
+	}
+	20% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+.page {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	opacity: 100%;
+	background-color: white;
+	animation-name: show;
+	animation-duration: 6s;
+	z-index: 2;
+}
+@keyframes show {
+	0% {
+		opacity: 0%;
+	}
+	75% {
+		opacity: 0%;
+		transform: scale(0.95);
+	}
+	100% {
+		opacity: 100%;
+		transform: scale(1);
+	}
+}
+.box {
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	width: 90%;
+	height: 100%;
+}
+.text {
+	margin: 5%;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 60px;
+	font-family: 'Poppins', sans-serif;
+	z-index: 2;
+}
+.back {
+	position: absolute;
+	top: 65%;
+	left: -3%;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+	transform: rotate(20deg);
+	cursor: none;
+}
+.back:before {
+	content: "";
+	position: absolute;
+	top: -100px;
+	left: 100px;
+	width: 0;
+	height: 0;
+	border-top: 100px solid transparent;
+	border-right: 160px solid #8D73EA;
+	border-bottom: 100px solid transparent;
+	cursor: none;
+}
+.back:hover {
+	transform: rotate(20deg) scale(2);
+}
+@media screen and (max-width: 600px) {
+	.circle {
+		opacity: 0%;
+	}
+	@keyframes fade {
+		0% {
+			opacity: 0%;
+		}
+		20% {
+			opacity: 0%;
+		}
+		100% {
+			opacity: 0%;
+		}
+	}
+	.page {
+		animation-duration: 3s;
+	}
+	@keyframes show {
+		0% {
+			opacity: 100%;
+		}
+		30% {
+			opacity: 100%;
+			transform: scale(1);
+		}
+		100% {
+			opacity: 100%;
+			transform: scale(1);
+		}
+	}
+	.box {
+		position: absolute;
+		top: 10%;
+		left: 5%;
+		width: 90%;
+		height: 100%;
+	}
+	.text {
+		margin: 5%;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 35px;
+		font-family: 'Poppins', sans-serif;
+		z-index: 2;
+	}
+	.back {
+		position: absolute;
+		top: 75%;
+		left: -3%;
+		width: 0;
+		height: 0;
+		border-top: 60px solid transparent;
+		border-right: 100px solid #8D73EA;
+		border-bottom: 60px solid transparent;
+		transform: rotate(10deg);
+		cursor: none;
+	}
+	.back:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-top: 0px solid transparent;
+		border-right: 0px solid #8D73EA;
+		border-bottom: 0px solid transparent;
+		cursor: none;
+	}
+}
